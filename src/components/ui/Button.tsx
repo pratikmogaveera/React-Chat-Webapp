@@ -1,11 +1,10 @@
-'use client'
 import { ButtonHTMLAttributes, FC } from 'react'
 import { cva, VariantProps } from 'class-variance-authority'
 import { Loader2 } from 'lucide-react'
 import { classNames } from '../../lib/utils'
 
-const buttonVariants = cva(
-    'active:scale-95 inline-flex items-center justify-ceter rounded-md text-sm font-medium transition-color focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 disabled:point-events-none',
+export const buttonVariants = cva(
+    'active:scale-95 inline-flex items-center justify-ceter rounded-md text-base font-medium transition-color focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 disabled:point-events-none',
     {
         variants: {
             variant: {

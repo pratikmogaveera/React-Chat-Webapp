@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home() {
 
-    await db.set('hello', 'hello')
 
     return (
         <div className='flex justify-center items-center gap-2 h-[100vh] w-full bg-red-400'>

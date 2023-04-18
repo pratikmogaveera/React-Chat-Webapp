@@ -3,6 +3,51 @@
 @tailwind utilities;
 
 
+@layer base {
+    container {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+    }
+}
+
 html {
     font-size: 18px;
 }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 5:08 */
+
+html {
+    scrollbar-color: #5A189A #f7fafc;
+    scrollbar-width: thin;
+}
+
+.scrollbar-thumb-blue::-webkit-scrollbar-thumb {
+    --bg-opacity: 1;
+    scrollbar-color: #5A189A;
+    background-color: #5A189A;
+
+}
+
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;
+}
+
+.scrollbar-track-blue-lighter::-webkit-scrollbar-track {
+    --bg-opacity: 1;
+    background-color: #f7fafc;
+    background-color: rgba(247, 250, 252, var(--bg-opacity));
+}
+
+.scrolbar-w-2::-webkit-scrollbar {
+    width: 0.35rem;
+    height: 0.35rem
+}
+
+.scrolling-touch {}
