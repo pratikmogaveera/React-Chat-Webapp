@@ -68,7 +68,7 @@ const Messages: FC<MessagesProps> = ({ initialMessages, sessionId, chatId, chatP
                                         // 'mb-2': !hasNextMessage
                                     })}>
                                     {msg.text}{' '}
-                                    <span className='ml-2 text-xs text-gray-400'>{formattedTimestamp}</span>
+                                    {/* <span className='ml-2 text-xs text-gray-400'>{formattedTimestamp}</span> */}
                                 </span>
                             </div>
                             <div className={classNames('relative w-6 h-6', {
