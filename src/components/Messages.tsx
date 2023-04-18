@@ -8,12 +8,13 @@ import { pusherClient } from '@/lib/pusher'
 
 interface MessagesProps {
     initialMessages: Message[]
-    sessionUser: User | any
-    chatPartner: User
+    sessionId: string
     chatId: string
+    sessionImg: string | null | undefined
+    chatPartner: User
 }
 
-const Messages: FC<MessagesProps> = ({ initialMessages, sessionUser, chatPartner, chatId }) => {
+const Messages: FC<MessagesProps> = ({ initialMessages, sessionId, chatId, chatPartner, sessionImg, }) => {
     const [messages, setMessages] = useState<Message[]>(initialMessages)
     const scrollDownRef = useRef<HTMLDivElement | null>(null)
 
@@ -38,7 +39,7 @@ const Messages: FC<MessagesProps> = ({ initialMessages, sessionUser, chatPartner
 
             {messages.map((msg, index) => {
                 // Checking who is the sender of the message.
-                const isCurrentUser = msg.senderId === sessionUser.id
+                const isCurrentUser = msg.senderId === sessionId
 
                 // Checking if next message is from the same user.
                 const hasNextMessage = messages[index - 1]?.senderId === msg.senderId
@@ -77,7 +78,7 @@ const Messages: FC<MessagesProps> = ({ initialMessages, sessionUser, chatPartner
                             })}>
                                 <Image
                                     fill
-                                    src={isCurrentUser ? sessionUser.image : chatPartner.image}
+                                    src={isCurrentUser ? (sessionImg as string) : chatPartner.image}
                                     alt='Sender Photo'
                                     referrerPolicy='no-referrer'
                                     className='rounded-full'
